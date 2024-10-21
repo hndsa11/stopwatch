@@ -1,0 +1,18 @@
+import time
+print('Press enter to start the timer')
+input()
+print('Started.')
+startTime = time.time()
+lastTime = startTime
+lapNum = 1
+#start tracking the lap time
+try:
+  while True:
+    input()
+    lapTime = round(time.time() - float(lastTime), 2)
+    totalTime = round(time.time() - float(startTime), 2)
+    print('Lap #%s: %s (%s)' % (lapNum, totalTime, lapTime),end='')
+    lapNum += 1
+    lastTime = time.time()
+except KeyboardInterrupt:
+  print('\nDone.')
